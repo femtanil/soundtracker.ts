@@ -1,0 +1,32 @@
+# electron-builder configuration file
+productName: "soundtracker.ts"
+appId: "com.femtanil.soundtracker"
+directories:
+  output: "build"
+  buildResources: "assets"
+
+# Platform specific configurations
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  publisherName: "femtanil"
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+  category: "public.app-category.utilities"
+
+linux:
+  target:
+    - target: pacman
+      arch:
+        - x64
+
+# Optional configurations
+asar: true
+extraMetadata:
+  main: "dist/electron/main.js"
