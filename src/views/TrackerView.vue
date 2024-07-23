@@ -1,5 +1,7 @@
 <template>
     <div class="flex flex-col justify-between h-full max-w-full">
+        <div id="tracker-view-upper-panel-container" class="flex justify-center">a</div>
+        <div>a</div>
         <component :is="visibleComponent" />
     </div>
 </template>
