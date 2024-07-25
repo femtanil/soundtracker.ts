@@ -5,7 +5,7 @@
         </div>
         <div id="app-view-bar-panels-container" class="flex">
             <div class="">
-                <AppTabSelection :tabs="tabNames"></AppTabSelection>
+                <AppTabSelection :tabs="tabNames" :defaultTab="defaultSelection"></AppTabSelection>
             </div>
         </div>
         <div id="app-view-bar-tbd-container" class="flex">
@@ -20,4 +20,5 @@ import AppMasterVolume from '@/components/AppMasterVolume.vue';
 import AppTabSelection from '@/components/AppTabSelection.vue';
 
 const tabNames: string[] = ["Disk Browser", "Track Scopes", "Master Scopes", "Master Spectrum"];
+const defaultSelection: string = tabNames[0];
 </script>
