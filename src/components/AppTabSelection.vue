@@ -14,7 +14,11 @@ interface Props {
 }
 const props = defineProps<Props>();
 const tabRefs: Ref<HTMLAnchorElement>[] = [];
-const emit = defineEmits(['setActiveTab']);
+const activeTab: Ref<string> = ref('');
+
+const emit = defineEmits<{
+    update: [value: string];
+}>();
 
 function addRef(element: unknown) {
     if (element instanceof HTMLAnchorElement) {
@@ -26,6 +30,8 @@ function setActiveTab(tab: string): void {
     tabRefs.forEach((ref) => {
         if (ref.value.textContent == tab) {
             ref.value.classList.add('tab-active');
+            activeTab.value = tab;
+            emit('update', tab);
         }
         else {
             ref.value.classList.remove('tab-active');
