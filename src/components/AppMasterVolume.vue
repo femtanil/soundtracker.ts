@@ -1,7 +1,7 @@
 <template>
-    <div id="app-master-volume-container" class="flex flew-row">
-        <AppRangeBar v-model="rangeValue" class="m-1" :step="5" :max="100"></AppRangeBar>
-        <AppSmallButton class="m-1">{{ volumeIcon }}</AppSmallButton>
+    <div id="app-master-volume-container" class="flex flew-row items-center">
+        <AppRangeBar v-model="rangeValue" class="" :step="5" :max="100"></AppRangeBar>
+        <AppSmallButton class="">{{ volumeIcon }}</AppSmallButton>
         <div>{{ rangeValue }}</div>
     </div>
 </template>

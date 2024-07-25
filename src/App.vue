@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-12">
         <div class="col-span-12">
-            <AppViewBar></AppViewBar>
+            <AppTabBar></AppTabBar>
         </div>
         <main class="col-span-12 p-3 overflow-auto">
             <router-view></router-view>
@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import AppViewBar from '@/components/AppViewBar.vue';
+import AppTabBar from '@/components/AppTabBar.vue';
 </script>
