@@ -1,7 +1,7 @@
 <template>
     <div id="app-master-volume-container" class="flex flew-row items-center">
         <AppRangeBar v-model="rangeValue" class="" :step="5" :max="100"></AppRangeBar>
-        <AppSmallButton class="">{{ volumeIcon }}</AppSmallButton>
+        <AppSmallButton @click="toggleMute">{{ volumeIcon }}</AppSmallButton>
         <div>{{ rangeValue }}</div>
     </div>
 </template>
@@ -14,6 +14,7 @@ import AppSmallButton from '@/components/AppSmallButton.vue';
 
 const { masterVolume } = storeToRefs(useAppStore());
 const rangeValue: Ref<number> = ref(0);
+const volumeBeforeMute: Ref<number> = ref(0);
 const volumeIcon = computed<string>(() => {
     if (rangeValue.value == 0) {
         return '🔇';
@@ -28,6 +29,16 @@ const volumeIcon = computed<string>(() => {
         return '🔊';
     }
 });
+
+function toggleMute(): void {
+    if (rangeValue.value != 0) {
+        volumeBeforeMute.value = rangeValue.value;
+        rangeValue.value = 0;
+    }
+    else {
+        rangeValue.value = volumeBeforeMute.value;
+    }
+}
 
 onMounted(() => {
     rangeValue.value = masterVolume.value;
