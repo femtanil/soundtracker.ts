@@ -4,18 +4,9 @@
     </div>
 </template>
 <script setup lang="ts">
-import { onMounted, computed } from 'vue';
-import { useMenuStore } from '@/stores/menu.ts';
-import { PageType } from '@/enums.ts';
-
-const menuStore = useMenuStore();
+import { computed } from 'vue';
 
 const visibleComponent = computed(() => {
     return null;
 });
-
-onMounted(() => {
-    menuStore.setCurrentPage(PageType.SETTINGS);
-});
-
 </script>
