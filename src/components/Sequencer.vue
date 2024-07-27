@@ -16,6 +16,6 @@ import { useSequencerStore } from '@/stores/sequencerStore.ts';
 const { bpm, tracks } = storeToRefs(useSequencerStore());
 
 onMounted(() => {
-    Tone.Transport.bpm.value = bpm.value;
+    Tone.getTransport().bpm.value = bpm.value;
 });
 </script>
