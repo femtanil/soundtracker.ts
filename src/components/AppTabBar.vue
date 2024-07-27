@@ -1,16 +1,14 @@
 <template>
-    <div id="app-view-bar-container" class="flex flew-row justify-between items-center p-2">
-        <div id="app-view-bar-master-volume-container" class="flex">
+    <div id="app-view-bar-container" class="grid grid-cols-3 items-center w-full p-2">
+        <div id="app-view-bar-master-volume-container" class="flex justify-self-start col-span-1">
             <AppMasterVolume></AppMasterVolume>
         </div>
-        <div id="app-view-bar-panels-container" class="flex">
-            <div class="">
-                <AppTabSelection @current-tab="(tabName) => updateTab(tabName)" :tabs="tabNames"
-                    :defaultTab="defaultSelection">
-                </AppTabSelection>
-            </div>
+        <div id="app-view-bar-panels-container" class="flex justify-self-center col-span-1">
+            <AppTabSelection @current-tab="(tabName) => updateTab(tabName)" :tabs="tabNames"
+                :defaultTab="defaultSelection">
+            </AppTabSelection>
         </div>
-        <div id="app-view-bar-tbd-container" class="flex">
+        <div id="app-view-bar-tbd-container" class="flex justify-self-end col-span-1">
             <div class="">
                 <span>TBD</span>
             </div>

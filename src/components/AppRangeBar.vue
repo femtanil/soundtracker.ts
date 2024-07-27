@@ -1,5 +1,5 @@
 <template>
-    <div id="app-range-bar-container">
+    <div id="app-range-bar-container" class="flex">
         <AppInput v-model="model" type="range" :class="'range range-secondary'" :step="props.step" :max="props.max">
         </AppInput>
     </div>
