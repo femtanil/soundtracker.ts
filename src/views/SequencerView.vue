@@ -5,19 +5,11 @@
     </div>
 </template>
 <script setup lang="ts">
-import { onMounted, computed } from 'vue';
-import { useMenuStore } from '@/stores/menu.ts';
-import { PageType } from '@/enums.ts';
+import { computed } from 'vue';
 import Sequencer from '@/components/Sequencer.vue';
-
-const menuStore = useMenuStore();
 
 const visibleComponent = computed(() => {
     return null;
-});
-
-onMounted(() => {
-    menuStore.setCurrentPage(PageType.SEQUENCER);
 });
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="sequencer-container">
         <div v-for="track in tracks" :key="track.id">
             <Track :track-id="track.id" :steps="track.steps" />
         </div>

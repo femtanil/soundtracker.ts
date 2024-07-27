@@ -17,7 +17,7 @@ const tabRefs: Ref<HTMLAnchorElement>[] = [];
 const activeTab: Ref<string> = ref('');
 
 const emit = defineEmits<{
-    update: [value: string];
+    currentTab: [value: string];
 }>();
 
 function addRef(element: unknown) {
@@ -31,7 +31,7 @@ function setActiveTab(tab: string): void {
         if (ref.value.textContent == tab) {
             ref.value.classList.add('tab-active');
             activeTab.value = tab;
-            emit('update', tab);
+            emit('currentTab', tab);
         }
         else {
             ref.value.classList.remove('tab-active');

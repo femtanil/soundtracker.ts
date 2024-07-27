@@ -13,9 +13,26 @@ const pinia = createPinia()
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '', component: SequencerView },
-        { path: '/home', component: HomeView },
-        { path: '/settings', component: SettingsView },
+        {
+            path: '/tracker',
+            name: 'Tracker',
+            component: TrackerView
+        },
+        {
+            path: '/sequencer',
+            name: 'Sequencer',
+            component: SequencerView
+        },
+        {
+            path: '/home',
+            name: 'Home',
+            component: HomeView
+        },
+        {
+            path: '/settings',
+            name: 'Settings',
+            component: SettingsView
+        },
     ]
 })
 

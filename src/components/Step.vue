@@ -1,7 +1,6 @@
 <template>
     <div class="step flex flex-row justify-center items-center w-8 h-8 m-0.5 bg-gray-200 cursor-pointer"
         :class="{ 'bg-green-600': props.isActive }" @click="toggleStep">
-        <!-- Display the step number or label if needed -->
     </div>
 </template>
 
