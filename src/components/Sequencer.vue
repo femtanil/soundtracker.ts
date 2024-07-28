@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
-import Track from './Track.vue';
+import Track from '@/components/Track.vue';
 import * as Tone from 'tone';
 import { useSequencerStore } from '@/stores/sequencerStore.ts';
 

@@ -7,10 +7,11 @@
 <script setup lang="ts">
 import { useSequencerStore } from '@/stores/sequencerStore.ts';
 import Step from '@/components/Step.vue';
+import { SequencerStep } from '@/models/SequencerTrack.ts';
 
 interface Props {
     trackId: number;
-    steps: Array<{ active: boolean }>;
+    steps: SequencerStep[];
 }
 const props = defineProps<Props>();
 const sequencerStore = useSequencerStore();
