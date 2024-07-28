@@ -10,12 +10,11 @@
 import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import Track from '@/components/Track.vue';
-import * as Tone from 'tone';
 import { useSequencerStore } from '@/stores/sequencerStore.ts';
 
-const { bpm, tracks } = storeToRefs(useSequencerStore());
+const { tracks } = storeToRefs(useSequencerStore());
 
 onMounted(() => {
-    Tone.getTransport().bpm.value = bpm.value;
+    //Tone.getTransport().bpm.value = bpm.value;
 });
 </script>

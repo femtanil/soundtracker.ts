@@ -5,18 +5,20 @@
 </template>
 
 <script setup lang="ts">
-import { useSequencerStore } from '@/stores/sequencerStore.ts';
+import { inject } from 'vue';
 import Step from '@/components/Step.vue';
-import { SequencerStep } from '@/models/SequencerTrack.ts';
+import { SequencerStep } from '@/models/SequencerModels.ts';
+import { SequencerService } from '@/services/SequencerServices';
+import { sequencerServiceKey } from '@/utils/injection-keys';
 
 interface Props {
     trackId: number;
     steps: SequencerStep[];
 }
 const props = defineProps<Props>();
-const sequencerStore = useSequencerStore();
+const sequencerService = inject(sequencerServiceKey) as SequencerService;
 
-function toggleStep(index: number) {
-    sequencerStore.toggleStep(props.trackId, index);
+function toggleStep(index: number): void {
+    sequencerService.toggleStep(props.trackId, index);
 }
 </script>
