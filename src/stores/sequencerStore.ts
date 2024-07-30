@@ -9,10 +9,14 @@ export const useSequencerStore = defineStore('sequencer', () => {
     const numSteps: Ref<number> = ref(16);
     const tracks = reactive(Array.from({ length: numTracks.value }, (_, i) => new SequencerTrack(i, numSteps.value)));
 
+    function refreshTracks(): void {
+    }
+
     return {
         bpm,
         numTracks,
         numSteps,
         tracks,
+        refreshTracks,
     }
 });
