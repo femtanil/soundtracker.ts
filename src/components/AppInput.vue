@@ -1,24 +1,20 @@
 <template>
     <label v-if="label" class="label-text">{{ label }}</label>
-    <input v-model="model" v-bind="{ ...$attrs, ...classes }" />
+    <input v-model="model" v-bind="{ ...$attrs }" :class="['input', props.class]" />
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
-
 interface Props {
-    label?: string | boolean;
-    class?: string | boolean;
+    label?: string;
+    class?: string;
 }
 
 const model = defineModel();
-const props = defineProps<Props>();
-
-const classes = computed(() => {
-    if (props.class) {
-        return { class: props.class };
-    }
-    else {
-        return { class: 'input input-bordered text-xl' };
-    }
+const props = withDefaults(defineProps<Props>(), {
+    label: () => "",
+    class: () => "input-bordered input-xs",
 })
+/*
+    Either a :class prop or the attribute class can be used to style this component.
+    The label has to specified with the :label prop.
+*/
 </script>
