@@ -14,10 +14,13 @@ The `vite` development server is now accessible @`localhost:5173`.
 ```commandline
 npm run app:dev
 ```
-
 - Build the electron app with:
 ```commandline
 npm run app electron:build
+```
+- Clean build files with:
+```commandline
+npm run clean
 ```
 
 More building commands are defined in `package.json`.
