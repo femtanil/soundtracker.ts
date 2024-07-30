@@ -1,8 +1,10 @@
-class SequencerStep {
+export class SequencerStep {
     public active: boolean;
+    public playing: boolean;
 
-    constructor(active: boolean = false) {
+    constructor(active: boolean = false, playing: boolean = false) {
         this.active = active;
+        this.playing = playing;
     }
 
     toggle() {
@@ -10,7 +12,7 @@ class SequencerStep {
     }
 }
 
-class SequencerTrack {
+export class SequencerTrack {
     public id: number;
     public steps: SequencerStep[];
 
@@ -19,5 +21,3 @@ class SequencerTrack {
         this.steps = Array.from({ length: numSteps }, () => new SequencerStep());
     }
 }
-
-export { SequencerStep, SequencerTrack };
